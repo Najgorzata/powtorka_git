@@ -1,0 +1,14 @@
+name: GitHubTraining
+
+on:
+  push:
+    branches: master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Triger jest ${{ github._event_name }}"
+      - run: echo " System ${{ runner.os }} "
+      - run: echo " branch ${{ github.ref}}, repozytorium ${{ guthub.repository}} "
