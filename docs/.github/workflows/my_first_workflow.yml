@@ -2,7 +2,7 @@ name: GitHubTraining
 
 on:
   push:
-    branches: master
+    branches: github_actions_cw1
 
 jobs:
   build:
