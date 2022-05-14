@@ -1,0 +1,28 @@
+name: GitHubTraining
+
+on:
+  push:
+    branches: master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Triger jest ${{ github._event_name }}"
+      - run: echo " System ${{ runner.os }} "
+      - run: echo " branch ${{ github.ref}}, repozytorium ${{ guthub.repository}} "
+
+  test_after_build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: action/checkout@v3
+
+      - run: echo " System ${{  runner.os }}"
+
+      - name: Wypisz liste plikow
+        run: ls ${{ github.workspace }}
+
+      -run: echo " Status joba ${{ job.status }}"
