@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
       - run: echo "Triger jest ${{ github._event_name }}"
       - run: echo " System ${{ runner.os }} "
@@ -15,7 +15,7 @@ jobs:
 
   test_after_build:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout Repository
         uses: action/checkout@v3
